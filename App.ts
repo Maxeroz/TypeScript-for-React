@@ -113,3 +113,39 @@ let sum = (num1: number, num2: number, another?: number) => {
 };
 
 sum(2, 3);
+
+let func = (user: { username: string; age: number; phone?: string }) => {
+  console.log(user.username);
+};
+
+// TYPE ALIASES
+
+type UserType = {
+  username: string;
+  age: number;
+  phone?: string;
+};
+
+let betterFunc = (user: UserType) => {
+  console.log(user.username);
+};
+
+type myFunc = (a: number, b: string) => void;
+
+let write: myFunc = (num, str) => {
+  console.log(num + " times" + str);
+};
+
+type UserType2 = {
+  username: string;
+  age: number;
+  phone?: string;
+  theme: "dark" | "light";
+};
+
+const userWithTheme: UserType2 = {
+  username: "Max",
+  age: 27,
+  phone: "+123456789",
+  theme: "dark",
+};
