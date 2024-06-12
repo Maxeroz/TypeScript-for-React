@@ -149,3 +149,28 @@ const userWithTheme: UserType2 = {
   phone: "+123456789",
   theme: "dark",
 };
+
+// INTERFACES
+
+interface IUser {
+  username: string;
+  email: string;
+  age: number;
+}
+
+interface IEmployee extends IUser {
+  employeeID: number;
+}
+
+const emp: IEmployee = {
+  username: "Thomas",
+  email: "thomas@example.com",
+  age: 23,
+  employeeID: 2323,
+};
+
+const client: IUser = {
+  username: "Tom",
+  email: "tom@example.com",
+  age: 17,
+};
