@@ -174,3 +174,57 @@ const client: IUser = {
   email: "tom@example.com",
   age: 17,
 };
+
+// GENERICS
+
+interface IAuthor {
+  id: number;
+  username: string;
+}
+
+interface ICategory {
+  id: number;
+  title: string;
+}
+
+interface IPost {
+  id: number;
+  title: string;
+  desc: string;
+  extra: IAuthor[] | ICategory[];
+}
+
+interface IPostbetter<T> {
+  id: number;
+  title: string;
+  desc: string;
+  extra: T[];
+}
+
+const testMe: IPostbetter<string> = {
+  id: 1,
+  title: "post title",
+  desc: "post desc",
+  extra: ["str", "str2"],
+};
+
+interface IPostEvenbetter<T extends object> {
+  id: number;
+  title: string;
+  desc: string;
+  extra: T[];
+}
+
+const testMe2: IPostEvenbetter<IAuthor> = {
+  id: 1,
+  title: "post title",
+  desc: "post desc",
+  extra: [{ id: 1, username: "Tom" }],
+};
+
+const testMe3: IPostEvenbetter<ICategory> = {
+  id: 1,
+  title: "post title",
+  desc: "post desc",
+  extra: [{ id: 1, title: "Photo" }],
+};
