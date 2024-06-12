@@ -228,3 +228,5 @@ const testMe3: IPostEvenbetter<ICategory> = {
   desc: "post desc",
   extra: [{ id: 1, title: "Photo" }],
 };
+
+// TYPESCRIPT REACT PROPS
