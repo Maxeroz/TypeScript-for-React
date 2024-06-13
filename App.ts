@@ -230,3 +230,4 @@ const testMe3: IPostEvenbetter<ICategory> = {
 };
 
 // TYPESCRIPT REACT PROPS
+// TYPESCRIPT REACT EVENTS
